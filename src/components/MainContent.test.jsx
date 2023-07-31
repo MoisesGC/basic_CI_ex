@@ -1,8 +1,8 @@
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-
 import MainContent from './MainContent';
+
 
 describe('MainContent', () => {
   it('should render a button', () => {
@@ -16,6 +16,7 @@ describe('MainContent', () => {
 
     const button = screen.getByRole('button');
     await userEvent.click(button);
-    expect(screen.getByTestId('help-area')).not.toBeInTheDocument();
+    
+    expect(screen.getByTestId('help-area')).toBeInTheDocument();
   });
 });
